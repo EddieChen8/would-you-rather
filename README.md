@@ -22,7 +22,7 @@ Welcome to the "Would You Rather?" web app project! This project involves buildi
 - Interactive and user-friendly interface
 
 ## Demo
-You can try the live demo of this project at [insert link to demo here].
+You can try the live demo of this project at [https://react-would-you-rather-3313e73ece2c.herokuapp.com/].
 
 ## Getting Started
 Follow these steps to get the project up and running on your local machine.
