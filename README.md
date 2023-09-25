@@ -1,4 +1,4 @@
-# Would You Rather - React.js Project
+# Would You Rather
 
 ## Table of Contents
 - [Introduction](#introduction)
