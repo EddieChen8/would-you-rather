@@ -48,7 +48,7 @@ Follow these steps to get the project up and running on your local machine.
 4. Open your web browser and visit http://localhost:3000 to access the application.
 
 
-### Usage
+## Usage
 - Sign up or log in to your account.
 - Create new "Would You Rather" questions or answer existing ones.
 - Explore the leaderboard to see how you rank among other users.
