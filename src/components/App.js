@@ -11,7 +11,7 @@ import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
 import NoMatch from './NoMatch';
 
-function App() {
+const App = () => {
   // Access the authenticated user from the Redux store
   const authUser = useSelector((state) => state.authUser);
   // Get the dispatch function to dispatch actions

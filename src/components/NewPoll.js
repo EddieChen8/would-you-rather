@@ -13,7 +13,7 @@ import {
 } from 'semantic-ui-react';
 import { handleSaveQuestion } from '../actions/questions';
 
-function NewPoll() {
+const NewPoll = () => {
   const authUser = useSelector((state) => state.authUser);
   const [state, setState] = useState({
     validSubmit: false,

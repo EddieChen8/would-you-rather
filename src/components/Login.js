@@ -12,24 +12,29 @@ import {
 } from 'semantic-ui-react';
 import { setAuthUser } from '../actions/authUser';
 
+// Define the Login component
 const Login = () => {
-  const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState('');
-  const dispatch = useDispatch();
-  const users = useSelector((state) => Object.values(state.users));
+  // Define state variables using React Hooks
+  const [loading, setLoading] = useState(false); // For displaying loading indicator
+  const [value, setValue] = useState(''); // For user selection
+  const dispatch = useDispatch(); // Access the dispatch function from Redux
+  const users = useSelector((state) => Object.values(state.users)); // Access user data from the Redux store
 
+  // Function to set loading state
   const handleLoading = () => {
     setLoading(true);
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     new Promise((res, rej) => {
-      handleLoading();
-      setTimeout(() => res(), 500);
-    }).then(() => dispatch(setAuthUser(value)));
+      handleLoading(); // Activate loading indicator
+      setTimeout(() => res(), 500); // Simulate loading delay
+    }).then(() => dispatch(setAuthUser(value))); // Dispatch an action to set the authenticated user
   };
 
+  // Generate dropdown data for user selection
   const generateDropdownData = () => {
     return users.map((user) => ({
       key: user.id,
@@ -39,6 +44,7 @@ const Login = () => {
     }));
   };
 
+  // Determine if the form submission button should be disabled
   const disabled = value === '' ? true : false;
 
   return (
@@ -60,15 +66,11 @@ const Login = () => {
           loading={loading}
         />
       </Segment.Group>
-      <footer className="footer">
-        <a href="https://www.freepik.com/free-photos-vectors/design">
-          Avatar characters created by freepik - www.freepik.com
-        </a>
-      </footer>
     </>
   );
 };
 
+// Define the LoginHeader component
 const LoginHeader = () => (
   <Header as="h4" block attached="top" textAlign="center">
     <Header.Content>Welcome to the Would You Rather App!</Header.Content>
@@ -76,6 +78,7 @@ const LoginHeader = () => (
   </Header>
 );
 
+// Define the LoginGridLayout component
 const LoginGridLayout = ({ image, form, loading }) => (
   <div>
     <Grid padded textAlign="center">
@@ -95,10 +98,12 @@ const LoginGridLayout = ({ image, form, loading }) => (
   </div>
 );
 
+// Define the BrandImage component
 const BrandImage = () => (
   <Image src="/images/avatars/animals.png" size="medium" centered />
 );
 
+// Define the ConnectedLoginForm component
 const ConnectedLoginForm = ({
   onLoading,
   value,
@@ -125,6 +130,7 @@ const ConnectedLoginForm = ({
   </Form>
 );
 
+// Define PropTypes for the ConnectedLoginForm component
 ConnectedLoginForm.propTypes = {
   onLoading: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
@@ -134,4 +140,5 @@ ConnectedLoginForm.propTypes = {
   generateDropdownData: PropTypes.func.isRequired
 };
 
+// Export the Login component as the default export
 export default Login;
